@@ -1,1 +1,3 @@
 # restaurant-page-project
+
+In this project I will continue to apply my understanding of DOM manipulation, as well as practice my newfound knowledge of ES6 modules and their use in separating "concerns" within the code of a multi-faceted website. I will generate a restaurant page using only a skeleton HTML file, a CSS file for styling, and otherwise relying on JavaScript to generate all elements of the web pages. I will also use a package manager for the first time in order to bundle several ES6 modules into one 'main' JS file. 

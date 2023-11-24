@@ -8,7 +8,7 @@
     --shade-purple: hsl(295, 20%, 40%);
     --shade-mint: hsl(160, 60%, 95%);
     --shade-linen: hsl(30, 67%, 96%);
-    --shade-gold: hsl(35, 75%, 48%);
+    --shade-gold: hsl(35, 75%, 46%);
     background-color: #222;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 18px;
@@ -18,17 +18,24 @@
     background-color: var(--shade-linen);
     margin: 0 auto;
     min-height: 100vh;
-    width: 80vw;
+    width: 82vw;
     max-width: 1080px;
+}
+
+.page-container {
+    background: inherit;
+    margin: 0 auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.4rem;
 }
 
-h1, h2 {
+h1, h2, h3 {
     margin: 1rem auto;
     text-align: center;
+    font-weight: 200px;
 }
 
 .image {
@@ -39,6 +46,7 @@ h1, h2 {
 
 p {
     text-align: center;
+    color: #444;
     width: min(820px, 92%);
 }
 
@@ -84,7 +92,7 @@ ul, li {
     margin: 2rem 0;
 }
 
-.card:last-child {
+#location-card {
     margin-top: 0;
 }
 

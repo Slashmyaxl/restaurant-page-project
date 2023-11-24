@@ -1,8 +1,20 @@
 import './styles.css';
 import loadFrontPage from './front.js';
+import loadContactsPage from './contacts.js';
+
+const content = document.querySelector('#content');
+
+function loadPage(page) {
+    switch (page) {
+        case 'contacts':
+            loadContactsPage();
+            break;
+        default:
+            loadFrontPage();
+    };
+}
 
 function loadNavBar() {
-    const content = document.querySelector('#content');
     const navbar = document.createElement('nav');
     const navContainer = document.createElement('ul');
 
@@ -12,7 +24,7 @@ function loadNavBar() {
     navContainer.classList.add('nav-container');
     navbar.appendChild(navContainer);
 
-    const navItem = function(name, id) {
+    const addNavItem = function(name, id) {
         const newItem = document.createElement('li');
         newItem.setAttribute('id', `${id}`);
         newItem.classList.add('nav-item');
@@ -20,14 +32,21 @@ function loadNavBar() {
         navContainer.appendChild(newItem);
     }
 
-    navItem('Home', 'homepage');
-    navItem('Menu', 'menu');
-    navItem('Contacts', 'contacts');
+    addNavItem('Home', 'home');
+    addNavItem('Menu', 'menu');
+    addNavItem('Contacts', 'contacts');
 
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(navItem => 
+        {navItem.addEventListener('click', (e) => {
+            content.removeChild(content.lastChild);
+            loadPage(`${e.target.id}`);
+        });
+    });
 };
 
 loadNavBar();
 
-loadFrontPage();
+loadPage('home');
 
 console.log('Initialization successful... out!');

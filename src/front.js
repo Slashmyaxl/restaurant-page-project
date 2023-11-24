@@ -3,18 +3,21 @@ import platter from './vidiveggies.jpg';
 export default function () {
     const content = document.querySelector('#content');
 
+    const frontPage = document.createElement('div');
+    frontPage.classList.add('page-container');
+
     const titleHeader = document.createElement('h1');
     titleHeader.textContent = "Veggie Vidi Vicci";
-    content.appendChild(titleHeader);
+    frontPage.appendChild(titleHeader);
 
     const vPlatter = new Image();
     vPlatter.src = platter;
     vPlatter.classList.add('image');
-    content.appendChild(vPlatter);
+    frontPage.appendChild(vPlatter);
 
     const textLine = document.createElement('p');
     textLine.innerHTML = "At Veggie Vidi Vicci, we take pride in making dishes out of vegetables, and making them taste <em>good!</em>  Come try for yourself!";
-    content.appendChild(textLine);
+    frontPage.appendChild(textLine);
 
     const hours = document.createElement('section');
     hours.classList.add('card');
@@ -45,10 +48,11 @@ export default function () {
     time('Saturday', '8:30AM - 9:30PM');
     
     hours.appendChild(hoursInfo);
-    content.appendChild(hours);
+    frontPage.appendChild(hours);
 
     const location = document.createElement('section');
     location.classList.add('card');
+    location.setAttribute('id', 'location-card');
     const locationHeader = document.createElement('h2');
     locationHeader.textContent = "Location";
     location.appendChild(locationHeader);
@@ -58,5 +62,6 @@ export default function () {
     address.innerHTML = "<p>1932 N Squash Ave</p><p>Aubergine, V8 51389</p>";
     location.appendChild(address);
 
-    content.appendChild(location);
+    frontPage.appendChild(location);
+    content.appendChild(frontPage);
 };

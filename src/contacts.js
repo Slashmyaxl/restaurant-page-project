@@ -4,6 +4,15 @@ export default function() {
     const contactPage = document.createElement('div');
     contactPage.classList.add('page-container');
 
+    const header = document.createElement('h2');
+    header.textContent = 'Contacts';
+    contactPage.appendChild(header);
+    
+    const headerInfo = document.createElement('p');
+    headerInfo.classList.add('header-info');
+    headerInfo.textContent = 'Below is contact information for our core leadership staff. For general inquiries, please call 1-800-VEGGIES or e-mail vvv@veg.org.';
+    contactPage.appendChild(headerInfo);
+
     const addNewContact = function(name, title, phone, email) {
         const contactCard = document.createElement('section');
         contactCard.classList.add('card');
@@ -32,11 +41,11 @@ export default function() {
         contactPage.appendChild(contactCard);
     }
 
-    addNewContact('Tomato Slice', 'Veg Boss', '(VEG)-872-8181', 'slice@vvv.org');
+    addNewContact('Tomato Slice', 'Veg Boss', '(VEG)-872-8181', 'tslice@veg.org');
 
-    addNewContact('Banana Peel', 'Opener', '(VEG)-872-8184', 'peely@vvv.org');
+    addNewContact('Nana Peel', 'Opener', '(VEG)-872-8184', 'peely@vvv.veg');
 
-    addNewContact('Olivia Tree', 'Floor Manager', '(VEG)-872-8183', 'olivet@vvv.org');
+    addNewContact('Olivia Tree', 'Floor Manager', '(VEG)-872-8183', 'olivet@veg.org');
 
     content.appendChild(contactPage);
 }

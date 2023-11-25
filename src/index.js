@@ -1,11 +1,15 @@
 import './styles.css';
 import loadFrontPage from './front.js';
+import loadMenuPage from './menu.js';
 import loadContactsPage from './contacts.js';
 
 const content = document.querySelector('#content');
 
 function loadPage(page) {
     switch (page) {
+        case 'menu':
+            loadMenuPage();
+            break;
         case 'contacts':
             loadContactsPage();
             break;

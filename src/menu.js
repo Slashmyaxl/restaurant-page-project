@@ -20,26 +20,32 @@ export default function() {
     headerInfo.textContent = 'Our fully plant-based menu features full-course meal items which may be combined. Ask your server about daily specials!';
     menuPage.appendChild(headerInfo);
 
-    const addMenuItem = function (name, description, img, price) {
+    const addMenuItem = function (name, description, img, price, misc) {
         const menuCard = document.createElement('section');
         menuCard.classList.add('card');
-        menuCard.classList.add('menu-item');
+        menuCard.classList.add('menu-card');
 
         const itemName = document.createElement('h4');
+        itemName.classList.add('menu-item')
         itemName.textContent = `${name}`;
         menuCard.appendChild(itemName);
 
         const itemDesc = document.createElement('p');
+        itemDesc.classList.add('menu-desc')
         itemDesc.textContent = `${description}`;
         menuCard.appendChild(itemDesc);
 
+        const imageContainer = document.createElement('div');
+        imageContainer.classList.add('image-container');
         const itemImg = new Image();
         itemImg.src = img;
         itemImg.classList.add('image');
         itemImg.classList.add('menu-img');
-        menuCard.appendChild(itemImg);
+        imageContainer.appendChild(itemImg);
+        menuCard.appendChild(imageContainer);
 
         const itemPrice = document.createElement('p');
+        itemPrice.classList.add('menu-price')
         itemPrice.textContent = `${price}`;
         menuCard.appendChild(itemPrice);
 
@@ -47,6 +53,7 @@ export default function() {
     }
 
     const apps = document.createElement('h3');
+    apps.classList.add('menu-headers');
     apps.textContent = 'Appetizers';
     menuPage.appendChild(apps);
 
@@ -55,14 +62,16 @@ export default function() {
     addMenuItem('Kimchi Quesadilla', 'Traditional Mexican quesadilla with a Korean twist.', kimque, '$8.49');
 
     const entrees = document.createElement('h3');
+    entrees.classList.add('menu-headers');
     entrees.textContent = 'Entrees';
     menuPage.appendChild(entrees);
 
-    addMenuItem('Mac & Cheeze', 'In need of a comfort dish? Our cashew-cheese mac is warm and decadent. Add mushrooms(+$1.49).', mac, '$11.99');
+    addMenuItem('Mac & Cheeze', 'In need of a comfort dish? Our cashew-cheese mac is warm and decadent.', mac, '$11.99 (mushrooms +$1.49)');
 
     addMenuItem('Tofu Stir Fry', 'Lots of veggies and a hardy helping of tofu topped with soy-sesame sauce, all over a bed of rice.', stirFry, '$13.99');
 
     const desserts = document.createElement('h3');
+    desserts.classList.add('menu-headers');
     desserts.textContent = 'Desserts';
     menuPage.appendChild(desserts);
 
